@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$( document).ready(function() {
+	var bannerheight = $('.banner-site').height();
+   $('.about-us-pg').css( "margin-top", bannerheight+"px" );
+});
+$(window).scroll(function () {
+   var height = $(window).scrollTop();
+   
+   var offset = $(".about-us-pg").offset();
+   var top = offset.top;
+   if(height  > top - 50) {
+        $('.home-page .navbar-fixed-top').show();
+    }
+	if(height  < top - 50) {
+        $('.home-page .navbar-fixed-top').hide();
+    }
+});
+$(document).ready(function() {
+  $('a[href*=#]').each(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname
+    && this.hash.replace(/#/,'') ) {
+      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+       if ($target) {
+         var targetOffset = $target.offset().top;
+
+<!----- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV--->   
+         $(this).click(function() {
+            $(".nav li a").removeClass("active");
+            $(this).addClass('active');
+           $('html, body').animate({scrollTop: targetOffset}, 1000);
+           return false;
+         });
+      }
+    }
+  });
+
+});
+</script>
+</head>
+
+<body>
+<div id="home" style="height:1px;"></div>
+<div class="home-page">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="#"><img src="images/logo.png"></a> </div>
+      <div class="navbar-collapse ">
+        <div class="right-head">
+          <ul id="navbar" class="nav navbar-nav navbar-right collapse in">
+            <li><a href="#home">Home</a></li>
+            <li><a id="abt" href="#about-us">About</a></li>
+            <li><a href="#home">Sign up</a></li>
+            <li><a href="#home">Terms and conditions</a></li>
+            <li><a href="#home">Privacy Policy</a></li>
+            <li><a href="#home">download</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </nav>
+  <div class="banner-site"> 
+  <div class="container">
+  <div class="row martop80">
+      <div class="col-lg-7 text-left">
+      	<div class="col-lg-12 martop30 marbot40"><img src="images/logo-banner.png"></div>
+        <div class="newsletter-footer">
+      <div class="col-lg-8 martop30">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter your email address here...">
+          <span class="input-group-btn">
+          <button class="btn btn-primary" type="button">Sign Up Here for Release Notification</button>
+          </span> </div>
+      </div>
+    </div>
+        <div class="clearfix"></div>
+        <div class="martop80 btn-banner">
+            <a href="#about-us"><img src="images/learn-more.png"></a>
+            <a href="#"><img src="images/app-store.png"></a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-right"><img src="images/mobile-banner.png"></div>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="about-us-pg">
+	<div id="about-us" style="height:1px;"></div>
+  <div class="container">
+    <h2 class="text-center marbot30 martop55">About Us</h2>
+    <div class="row">
+      <div class="col-md-3 text-center"> <i class="img-circle fa fa-mobile"></i>
+        <h4>Create and Import Playlists</h4>
+        <p>Let GrooveYak be your music's "Forever Home:". Import existing playlists and create new playlists drawing from multiple platforms </p>
+      </div>
+      <div class="col-md-3 text-center"> <i class="img-circle fa fa-mobile"></i>
+        <h4>Multi-Platform</h4>
+        <p>Create and play cross platform playlists in a single application. New platforms will be integrated into the platform contantly. </p>
+      </div>
+      <div class="col-md-3 text-center"> <i class="img-circle fa fa-mobile"></i>
+        <h4>Interact and Share</h4>
+        <p>We have integrated directly with Facebook to power an integrated social experience.</p>
+      </div>
+      <div class="col-md-3 text-center"> <i class="img-circle fa fa-mobile"></i>
+        <h4>Discover New Music</h4>
+        <p>Explore and discover new music with a simple and intuitive interface.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="playlist-pg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 text-left"> <img src="images/left-power.png"> </div>
+      <div class="col-md-7 martop80">
+        <h2>Playlist Management</h2>
+        <p>Don't worry about being able to manage all of your playlists. We handle that natively within the Grooveyak platform and allow you to import playlists from other places too!</p>
+        <div class="clearfix"></div>
+        <a class="btn btn-primary" href="#" role="button">Learn More</a> </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7 martop80">
+        <h2>Music Discovery</h2>
+        <p>Discover great new music genres and artists by browsing through what your friends have listened to recently and posted on Facebook.</p>
+        <div class="clearfix"></div>
+        <a class="btn btn-primary" href="#" role="button">Learn More</a> </div>
+      <div class="col-md-5 text-right"> <img src="images/right-music.png"> </div>
+    </div>
+  </div>
+</div>
+<div class="awaysome-pg">
+  <div class="container">
+    <h2 class="text-center marbot30">Awesome App Features</h2>
+    <div class="row">
+      <div class="col-md-3 text-right">
+        <div class="col-md-12"> <i class="img-circle fa fa-mobile"></i>
+          <h4>Share  Music</h4>
+          <p>LShare music you are playing with one simple click in the "Now Playing" feature.</p>
+        </div>
+        <div class="col-md-12"> <i class="img-circle fa fa-mobile"></i>
+          <h4>Simplified Interface </h4>
+        </div>
+      </div>
+      <div class="col-md-6 text-center"> <img src="images/awaysome-img.png"> </div>
+      <div class="col-md-3 text-left">
+        <div class="col-md-12"> <i class="img-circle fa fa-mobile"></i>
+          <h4>Chat</h4>
+          <p>LSeamlessly start and continue conversations using our chat client for Facebook Messenger.</p>
+        </div>
+        <div class="col-md-12"> <i class="img-circle fa fa-mobile"></i>
+          <h4>Intuitive Navigation</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="screenshot-pg">
+  <div class="container">
+    <h2 class="text-center marbot30">Screenshot Gallery</h2>
+    <div id="myCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="row-fluid">
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-1.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-2.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-3.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-4.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-5.png" alt="Image" style="max-width:100%;"></a></div>
+          </div>
+          <!--/row-fluid--> 
+        </div>
+        <!--/item-->
+        
+        <div class="item">
+          <div class="row-fluid">
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-1.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-2.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-3.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-4.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-5.png" alt="Image" style="max-width:100%;"></a></div>
+          </div>
+          <!--/row-fluid--> 
+        </div>
+        <!--/item-->
+        
+        <div class="item">
+          <div class="row-fluid">
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-1.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-2.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-3.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-4.png" alt="Image" style="max-width:100%;"></a></div>
+            <div class="span3"><a href="#x" class="thumbnail"><img src="images/screen-5.png" alt="Image" style="max-width:100%;"></a></div>
+          </div>
+          <!--/row-fluid--> 
+        </div>
+        <!--/item--> 
+        
+      </div>
+      <!--/carousel-inner--> 
+      
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a> <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a> 
+      <!--/myCarousel--> 
+      
+    </div>
+  </div>
+</div>
+<div class="footer-main">
+  <div class="container">
+    <h2 class="text-center marbot30">We are Social</h2>
+   
+    <ul class="footer-social">
+    	<li><a href="#" class="btn btn-default"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#" class="btn btn-default"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#" class="btn btn-default"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" class="btn btn-default"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" class="btn btn-default"><i class="fa fa-pinterest-p"></i></a></li>
+        <li><a href="#" class="btn btn-default"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+    <div class="martop30 text-center">Copyright &copy; 2015 Grooveyak, LLC.</div> 
+  </div>
+</div>
+</body>
+</html>
